@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WholesaleHub</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>WholesaleHub</h1>
+        <p>Your trusted wholesale marketplace</p>
+    </header>
+
+    <main>
+        <h2>Our Products</h2>
+
+        <div class="products">
+            {% for product in products %}
+            <div class="product-card">
+                <h3>{{ product.name }}</h3>
+                <p>Category: {{ product.category }}</p>
+                <p>Price: ${{ "%.2f"|format(product.price) }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+</body>
+</html>
